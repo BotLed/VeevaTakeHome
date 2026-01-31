@@ -29,10 +29,8 @@ public class CalculatorTest {
             WebElement heightUnitLabel = wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//input[@id='cheightmeter']/following-sibling::span | //td[contains(.,'cm')]")));
 
-            // Metric unit displayed correctly
             Assert.assertTrue(heightUnitLabel.getText().contains("cm"), "Unit did not switch to metric (cm)!");
             
-            // Weight unit changed to kg
             WebElement weightUnitLabel = driver.findElement(By.xpath("//input[@id='ckg']/following-sibling::span | //td[contains(.,'kg')]"));
             Assert.assertTrue(weightUnitLabel.getText().contains("kg"), "Unit did not switch to metric (kg)!");
         }
